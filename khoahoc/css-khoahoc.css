@@ -1,0 +1,80 @@
+.container-kh{
+width: 100%;
+    height: auto;
+}
+.menu-kh-top{
+    width: 100%;
+    height: 50px;
+    box-shadow: 1px 5px 5px slategrey;
+}
+.menu-kh-top ul li{
+    list-style: none;
+    display: inline-block;
+    padding-left: 30px;
+    text-decoration: none;
+}
+.menu-kh-top ul li img  {
+    height: 40px;
+    width: 200px;
+}
+.menu-kh-top a{
+    text-decoration: none;
+    font-size: 20px;
+    vertical-align: middle;
+    color: #0e0e0e;
+}
+.menu-kh-top a:hover{
+    transition: all 0.5s ease;
+    text-shadow: 5px 5px 5px #cb4141;
+    color: #da0b0b;
+}
+.tieude{
+    display: flex;
+    font-size: x-large;
+    height: 80px;
+    width: 100%;
+    align-items: center;
+    margin-top: 50px;
+    margin-left: 50px;
+}
+.tieude h1:hover{
+    transition: all 0.5s ease;
+    text-shadow: 5px 5px 5px #341c1c;
+    color: #ff0707;
+}
+.tieude input{
+    margin-inline-start: 450px;
+    border-radius: 3px;
+    font-size: 20px;
+    height: 40px;
+    width: 400px;
+    border: 1px solid #c4c4c4;
+}
+.tieude button  {
+    border: none;
+    position: absolute;
+    height: 45px;
+    width: 45px;
+    background-color: #9b1b1b;
+    border-radius: 3px;
+
+}
+.content-kh{
+    width: 100%;
+    margin: 100px 60px;
+    display: grid;
+    grid-template-columns: 23% 23% 23% 23%;
+    grid-row-gap: 40px;
+    grid-column-gap: 10px;
+}
+.content-kh img{
+    box-shadow: 1px 1px 2px 2px #cbcbcb;
+    border-radius: 10px;
+    width: 85%;
+    border: 2px solid #f1f1f1;
+}
+.content-kh img:hover{
+    box-shadow: 1px 1px 4px 4px #808080;
+    transition: all 0.5s ease;
+
+}

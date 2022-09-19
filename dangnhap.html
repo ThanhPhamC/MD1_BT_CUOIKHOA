@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Đăng kí</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <script src="dangki/Canvashinhtron.js"></script>
+    <link rel="stylesheet" href="dangki/css-dangki.css">
+</head>
+<body>
+<div class="container-dk">
+    <div><img src="img/Logo-Rikkei.png" alt=""></div>
+    <div class="container-dk-bot">
+        <div class="dulieu">
+            <h2> Đăng nhap</h2>
+            <input required class="hover-boder" type="text" placeholder="Tên truy cập "><br>
+            <input class="hover-boder" type="password" placeholder="Mật khẩu"><br>
+          <button>loggin</button>
+            <p> ban chua co tai khoan <a href="dangki.html"> register?</a></p>
+        </div>
+    </div>
+</div>
+
+<canvas id="myPoint" width='1415' height="700" style="position: absolute"></canvas>
+<canvas id="myCanvas" width="1415" height="700" style="  border:1px solid #d3d3d3; "></canvas>
+<script>
+    let a = document.getElementById("myCanvas");
+    let hv = a.getContext("2d");
+    let grd = hv.createLinearGradient(1580, 900, 0, 0);
+    grd.addColorStop(0, "red");
+    grd.addColorStop(1, "white");
+    hv.fillStyle = grd;
+    hv.fillRect(0, 0, 1580, 900);
+
+    let b = document.getElementById('myPoint');
+    let ctx = b.getContext('2d')
+    for (let i = 0; i < 40; i++) {
+        let radius = Math.floor(Math.random() * 80);
+        console.log("r1------", radius)
+        let x = Math.random() * 1400 + 1.5 * radius;
+        console.log("x---", x)
+        let y = Math.random() * 600 + 4 * radius;
+        console.log("y----", y)
+        let red = Math.floor(Math.random() * 255);
+        let green = Math.floor(Math.random() * 255);
+        let blue = Math.floor(Math.random() * 255);
+        let color = "rgb(" + red + "," + blue + "," + green + ")";
+        let circle = new MyPoint(x, y, radius, color)
+        circle.drawCircle(ctx)
+    }
+</script>
+</body>
+</html>

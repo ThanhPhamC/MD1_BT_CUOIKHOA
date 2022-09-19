@@ -1,0 +1,109 @@
+.container-bdk{
+    width: 100%;
+    height: auto;
+}
+.menu-bdk-top{
+    width: 100%;
+    height: 50px;
+    box-shadow: 1px 5px 5px slategrey;
+}
+.menu-bdk-top ul li{
+    list-style: none;
+    display: inline-block;
+    padding-left: 30px;
+    text-decoration: none;
+}
+.menu-bdk-top ul li img  {
+    height: 40px;
+    width: 200px;
+}
+.menu-bdk-top a{
+    text-decoration: none;
+    font-size: 20px;
+    vertical-align: middle;
+    color: #0e0e0e;
+}
+.menu-bdk-top a:hover{
+    transition: all 0.5s ease;
+    text-shadow: 5px 5px 5px #cb4141;
+    color: #da0b0b;
+}
+.tieude-bdk{
+    display: flex;
+    font-size: x-large;
+    height: 80px;
+    width: 100%;
+    align-items: center;
+    margin-left: 50px;
+}
+.timkiem-bdk{
+    margin-inline-start: 280px;
+    border-radius: 3px;
+    font-size: 20px;
+    height: 40px;
+    width: 400px;
+    border: 1px solid #c4c4c4;
+}
+.button-timkiem {
+    color: cornsilk;
+    position: absolute;
+    background-color: #f60606;
+    border: 1px solid #797878;
+    height: 40px;
+    width: 40px;
+    border-radius: 3px;
+}
+.content-bdk{
+    display: flex;
+    width: 100%;
+}
+.bdk-content-menu{
+    width: 320px;
+    height: auto;
+}
+.bdk-content-menu ul li a{
+    text-decoration: none;
+    font-size: 25px;
+    vertical-align: middle;
+    color: #9f2626;
+}
+.bdk-content-menu ul li{ 
+    padding-top: 40px;
+}
+.noidung-content{ 
+    width: 75%;
+    height:auto;
+    margin-top: 100px;
+    border-radius:10px ;
+    background-color: #f1f1f1;
+}
+.noidung-content-con{
+    width: 90%;
+    height:auto;
+    margin: 50px;
+    border-radius:10px ;
+    background-color: #fffdfd;
+    padding-bottom: 30px;
+}
+.noidung-content h1 {
+    padding: 20px;
+}
+tr{ height: 30px;
+    text-align: center}
+th{
+    background-color: #a60606;
+    color: #fafafa;
+    height: 40px;
+}
+tr:hover{
+    background-color: #a6b0ff;
+}
+button:hover{
+    background-color: #022cfc;
+    border: hidden;
+    border-radius: 4px;
+    color: #f8f8f8;
+}
+.col-form-label{
+    padding-bottom: 1px;
+}

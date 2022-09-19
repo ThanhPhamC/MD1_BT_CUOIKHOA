@@ -1,0 +1,50 @@
+.container-dk{
+    width: 1415px;
+    position: absolute;
+    z-index: 1;
+}
+.container-dk img{
+    position: absolute;
+    width: 300px ;
+    margin-top:20px; margin-left: 20px
+}
+.container-dk-bot{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+.dulieu{
+   margin-top: 80px;
+    border: 3px solid #f65d5d;
+    background-color: #ffffff;
+    border-radius: 8px;
+    width: 400px;
+    height: 600px;
+}
+.dulieu input{
+    border-radius: 5px;
+    background-color: #f8f8f8;
+    height: 40px;
+    width: 300px;
+    margin-top: 20px;
+}
+.hover-boder:hover{
+    transition: all 0.1s ease;
+    box-shadow: 5px 5px 5px #cb4141;
+}
+.dulieu h2:hover{
+    color: #fc0a0a;
+    text-shadow: 5px 5px 5px #464343;
+    transition: all 0.1s ease;
+}
+.dulieu button{
+    border-radius: 5px;
+    background-color: #ff0202;
+    color: cornsilk;
+    height: 40px;
+    width: 300px;
+    margin-top: 20px;
+}
+
+
+

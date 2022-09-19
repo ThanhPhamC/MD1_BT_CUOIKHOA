@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+<link rel="stylesheet" href="trangchu/css-trangchu.css">
+<head>
+    <meta charset="UTF-8">
+    <title>Trang chủ rikkei</title>
+</head>
+<body>
+<div class="container">
+    <div class="menu">
+        <div class="menu_top">
+            <a href=""><img src="img/Logo-Rikkei.png" alt=""></a>
+            <div class="search">
+                <input placeholder="  Tìm kiếm tin tức">
+                <button><a href=""><i class="bi bi-search"></i></a></button>
+            </div>
+        </div>
+        <div class="menu_bot">
+            <div class="ul_li menu_bot_left ">
+                <ul>
+                    <li><a href=""><i class="bi bi-house-fill"></i> Trang chủ</a></li>
+                    <li><a href=""><i class="bi bi-arrow-up-right-square-fill"></i> Giới thiệu</a>
+                    </li>
+                    <li><a href="http://localhost:63342/MD1/BAITAPCUOIKHOA/khoahoc.html?_ijt=87jsfsna9rlm4uvuun6n4dbb9m&_ij_reload=RELOAD_ON_SAVE" target="_blank"><i class="bi bi-book-half"> </i> Khoá học</a></li>
+                    <li><a href=""><i class="bi bi-calendar-week-fill"></i> Lịch khai giảng</a></li>
+                    <li><a href=""><i class="bi bi-newspaper"></i> Tin tức</a></li>
+                </ul>
+            </div>
+            <div class="ul_li menu_bot_right ">
+                <ul>
+                    <li><a href=""><i class="bi bi-person-circle"></i> Đăng Nhập</a></li>
+                    <li><a href="http://localhost:63342/MD1/BAITAPCUOIKHOA/dangki.html?_ijt=6bedh85d5m23vngb5htc7gv56s&_ij_reload=RELOAD_ON_SAVE" target="_blank"><i class="bi bi-arrow-right-square-fill"></i> Đăng Kí</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <div class="=content" >
+            <div class="content1"><img src="img/content1.png" alt="anhnen">
+            </div>
+            <div class=" content3 "><img src="img/anh5.png" alt="anh5"></div>
+            <div class="content2 ">
+                <div><img src="img/anh1.png" alt=""></div>
+                <div><img style="top: -40px" src="img/anh2.png" alt=""></div>
+                <div><img style="top: -80px" src="img/anh3.png" alt=""></div>
+            </div>
+            <div><img class="size1" src="img/anh6.png" alt=""></div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<script >
+    let a = document.getElementById("back-gr");
+    let hv = a.getContext("2d");
+    let grd = hv.createLinearGradient(200, 300, 0, 0);
+    grd.addColorStop(0, "red");
+    grd.addColorStop(1, "white");
+    hv.fillStyle = grd;
+    hv.fillRect(0, 0, 1400, 300);
+</script>
+</body>
+</html>
