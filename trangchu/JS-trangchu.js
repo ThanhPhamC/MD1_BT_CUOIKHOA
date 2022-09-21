@@ -120,9 +120,14 @@ function loginHome() {
             document.getElementById('alertLogin').innerHTML = `<label style="color: #fa0000" >*Đăng nhập thành công*</label>`
             window.location.href = 'homelogin.html'
             window.localStorage.setItem('Check_user', JSON.stringify(namelogin))
+
         } else {
             document.getElementById('alertLogin').innerHTML = `<label style="color: #fa0000" >*ID login hoặc password không tồn tại*</label>`
         }
 
     }
+}
+function logOut() {
+    window.localStorage.removeItem('Check_user');
+    window.location.reload();
 }

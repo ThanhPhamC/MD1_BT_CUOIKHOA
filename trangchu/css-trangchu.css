@@ -49,9 +49,10 @@
 
 }
 .menu_bot_left {
-    width: 70%;
+    width: 60%;
 }
 .menu_bot_right{
+    display: inline-block;
     padding-right: 10px;
 }
 .ul_li a {

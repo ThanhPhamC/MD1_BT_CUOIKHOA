@@ -193,7 +193,6 @@
              </tr>`
         }
 
-
         document.getElementById('vebody').innerHTML = veBang;
         $('#exampleModal2').on('show.bs.modal', function (event) {
             var button = $(event.relatedTarget) // Button that triggered the modal
@@ -371,7 +370,7 @@
                 <td>${listSearch[i].sdt}</td>
                 <td>${listSearch[i].fb}</td>
                 <td>${listSearch[i].github}</td>
-                <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal2" data-whatever="${listSearch[i].id}"><i class="bi bi-pencil-square"></i></button>
+                <td class="nonebutton"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal2" data-whatever="${listSearch[i].id}"><i class="bi bi-pencil-square"></i></button>
                     <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog"
                          aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog" role="document">
@@ -407,7 +406,7 @@
                             </div>
                         </div>
                 </td>
-                 <td><button style="background-color: red; color: cornsilk" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal3" data-whatever="${danhsachBanbe[i].id}"><i class="bi bi-pencil-square"></i></button>
+                 <td class="nonebutton" ><button style="background-color: red; color: cornsilk" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal3" data-whatever="${danhsachBanbe[i].id}"><i class="bi bi-pencil-square"></i></button>
                     <div class="modal fade" id="exampleModal3" tabindex="-1" role="dialog"
                          aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog" role="document">
@@ -452,6 +451,15 @@
             modal.find('.modal-title').text('Xoá bạn bè')
             modal.find('.modal-body input').val('Xác nhận xoá "' + danhsachBanbe[idDelete - 1].getTen() + '" khỏi danh sách !')
         })
+        let checkUsderonline=window.localStorage.getItem('Check_user') ;
+        console.log('-----checkusonline----',checkUsderonline)
+        let noneButton= document.getElementsByClassName('nonebutton');
+        console.log('noneButton', noneButton)
+        if (checkUsderonline===null){
+            for (let  i = 0; i < noneButton.length ; i++) {
+                noneButton[i].style.display='none'
+            }
+        }
     }
 
 
