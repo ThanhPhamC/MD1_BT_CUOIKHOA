@@ -27,8 +27,8 @@
                 <a href="index.html"
                    target="_self"><img src="img/Logo-Rikkei.png" alt=""></a></li>
             <li>
-                <a onclick="chuyentrang()" href=""
-                   target="_self"><i class="bi bi-house-fill"></i> Trang chủ</a></li>
+                <a onclick="chuyentrang()"
+                   ><i class="bi bi-house-fill"></i> Trang chủ</a></li>
             <li><a href=""><i class="bi bi-newspaper"></i> Góc chia sẻ</a></li>
             <li><a style="color: #fd021e" href=""><i class="bi bi-ui-checks"></i> Bảng điều khiển </a></li>
             <li style="margin-left: 300px"><a href=""><i class="bi bi-person-circle"></i> Tài khoản của tôi</a></li>
@@ -463,9 +463,12 @@
     }
  function chuyentrang() {
      let checkUsderonline=window.localStorage.getItem('Check_user') ;
+     console.log('----------check-----',checkUsderonline)
      if (checkUsderonline===null){
+         console.log('-------vaodau-------')
          window.location.href = 'index.html'
      }else {
+         console.log('=======khong=========')
          window.location.href = 'homelogin.html'
      }
 
