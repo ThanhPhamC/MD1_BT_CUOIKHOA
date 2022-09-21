@@ -23,20 +23,20 @@ class Friend {
     getTen(){
         return this.ten
     }
-    setSdt(){
+    setSdt(sdt){
         this.sdt=sdt
     }
     getSdt(){
         return this.sdt
     }
-    setFb(){
+    setFb(fb){
         this.fb=fb
     }
     getFB(){
         return this.fb
     }
     setGithub(github){
-        this.github=-github
+        this.github=github
     }
     getGithub(){
         return this.github

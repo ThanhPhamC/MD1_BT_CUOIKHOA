@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <script src="dangki/Canvashinhtron.js"></script>
     <link rel="stylesheet" href="dangki/css-dangki.css">
+    <script src="dangki/dangki.js"></script>
 </head>
 <body>
 <div class="container-dk">
@@ -13,24 +14,44 @@
     <div class="container-dk-bot">
         <div class="dulieu">
             <h2> Đăng kí</h2>
-            <input oninput="checkValidate()" value="" id="loginName" class="hover-boder" type="text" placeholder="Tên truy cập "><br>
-            <input oninput="checkValidate()" value="" id="password" class="hover-boder" type="password" placeholder="Mật khẩu"><br>
-            <input oninput="checkValidate()" value="" id="cfPassword" class="hover-boder" type="password" placeholder="Nhập lại mật khẩu"><br>
-            <input oninput="checkValidate()" value="" id="email" class="hover-boder" type="email" placeholder="Email@gmail.com"><br>
-            <input oninput="checkValidate()" value="" id="phone" class="hover-boder" type="text" placeholder="Số điện thoại"><br>
-            <button  class="hover-boder" onclick="register()"> Đăng kí ngay</button>
+            <div><label class="dulieu-label" id="aletLogin">Name login:</label></div>
+            <div>
+                <input oninput="checkValidate()" value="" id="loginName" class="hover-boder" type="text"
+                       placeholder="Tên truy cập "><br>
+            </div>
+            <div><label class="dulieu-label" id="aletPass">&nbsp; New Password:</label></div>
+            <div>
+                <input oninput="checkValidate()" value="" id="passWord" class="hover-boder" type="password"
+                       placeholder="Mật khẩu"><br>
+            </div>
+            <div><label class="dulieu-label" id="aletConfim">Confirm pass:</label></div>
+            <div>
+                <input oninput="checkValidate()" value="" id="cfPassword" class="hover-boder" type="password"
+                       placeholder="Nhập lại mật khẩu"><br>
+            </div>
+            <div><label class="dulieu-label" id="aletphone">Phonenumber:</label></div>
+            <div>
+                <input oninput="checkValidate()" value="" id="inputPhone" class="hover-boder" type="text"
+                       placeholder="Số điện thoại"><br>
+            </div>
+            <div>
+                <button class="hover-boder" onclick="register()"> Đăng kí ngay</button>
+            </div>
+
+
             <p style="margin-top: 20px"> Bằng cách nhấn Đăng Ký Ngay, bạn đồng ý với <br>Điều Khoản Dịch Vụ và Chính
                 Sách Bảo Mật.</p>
-            <lable hidden="hienThi"></lable>
         </div>
     </div>
 </div>
 <canvas id="myPoint" width='1415' height="700" style="position: absolute"></canvas>
 <canvas id="myCanvas" width="1415" height="700" style="  border:1px solid #d3d3d3; "></canvas>
 <script>
+
+
     let a = document.getElementById("myCanvas");
     let hv = a.getContext("2d");
-    let grd = hv.createLinearGradient(1580, 900, 0, 0);
+    let grd = hv.createLinearGradient(1580, 900, 1000, 0);
     grd.addColorStop(0, "red");
     grd.addColorStop(1, "white");
     hv.fillStyle = grd;
@@ -52,6 +73,7 @@
         let circle = new MyPoint(x, y, radius, color)
         circle.drawCircle(ctx)
     }
+
     function register() {
         var register = {
             email: '',

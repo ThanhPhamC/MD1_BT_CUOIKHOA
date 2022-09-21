@@ -1,10 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
 <link rel="stylesheet" href="trangchu/css-trangchu.css">
+
 <head>
     <meta charset="UTF-8">
     <title>Trang chủ rikkei</title>
+    <script src="trangchu/User.js"></script>
+
 </head>
 <body>
 <div class="container">
@@ -22,21 +36,101 @@
                     <li><a href=""><i class="bi bi-house-fill"></i> Trang chủ</a></li>
                     <li><a href=""><i class="bi bi-arrow-up-right-square-fill"></i> Giới thiệu</a>
                     </li>
-                    <li><a href="http://localhost:63342/MD1/BAITAPCUOIKHOA/khoahoc.html?_ijt=87jsfsna9rlm4uvuun6n4dbb9m&_ij_reload=RELOAD_ON_SAVE" target="_blank"><i class="bi bi-book-half"> </i> Khoá học</a></li>
+                    <li>
+                        <a href="" target="_blank"><i class="bi bi-book-half"> </i> Khoá học</a></li>
                     <li><a href=""><i class="bi bi-calendar-week-fill"></i> Lịch khai giảng</a></li>
-                    <li><a href=""><i class="bi bi-newspaper"></i> Tin tức</a></li>
                 </ul>
             </div>
             <div class="ul_li menu_bot_right ">
                 <ul>
-                    <li><a href=""><i class="bi bi-person-circle"></i> Đăng Nhập</a></li>
-                    <li><a href="http://localhost:63342/MD1/BAITAPCUOIKHOA/dangki.html?_ijt=6bedh85d5m23vngb5htc7gv56s&_ij_reload=RELOAD_ON_SAVE" target="_blank"><i class="bi bi-arrow-right-square-fill"></i> Đăng Kí</a></li>
+                    <li><a href="" data-toggle="modal" data-target="#exampleModal"
+                           data-whatever=""><i class="bi bi-person-circle"></i> Đăng Nhập</a></li>
+                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                         aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Login </h5>
+                                </div>
+                                <div class="modal-body">
+                                    <span id="thongBao"></span>
+                                    <div class="form-group">
+                                        <label id="alertLogin" class="col-form-label">ID login</label>
+                                        <input type="text" class="form-control" value="" id="nameLogin">
+                                    </div>
+                                    <div class="form-group">
+                                        <label id="alertPass" class="col-form-label">Password</label>
+                                        <input type="text" class="form-control" value="" id="passLogin">
+                                    </div>
+                                    <div class="form-group">
+                                        <label style="vertical-align: initial" class="col-form-label"><a
+                                                href="dangki.html">Click here to: Register ?</a></label>
+                                    </div>
+
+                                </div>
+                                <div class="modal-footer">
+                                    <button style="background-color: red;" type="button" class="btn btn-secondary"
+                                            data-dismiss="modal">Huỷ
+                                    </button>
+                                    <button type="button" onclick="loginHome()" class="btn btn-primary"><a href="homelogin.html">Đồng ý</a></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <li><a href="" target="_blank" data-toggle="modal" data-target="#exampleModal3"
+                           data-whatever=""><i class="bi bi-arrow-right-square-fill"></i> Đăng Kí</a></li>
+                    <div class="modal fade" id="exampleModal3" tabindex="-1" role="dialog"
+                         aria-labelledby="exampleModalLabel3" aria-hidden="true">
+                        <div class="modal-dialog" id="datatong" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel3">Register </h5>
+                                </div>
+                                <div class="modal-body">
+
+                                    <div class="form-group">
+                                        <label id="alertName" class="col-form-label">Full name:</label>
+                                        <input type="text" placeholder="Tên đầy đủ" oninput="CheckRegister()"
+                                               class="form-control" value="" id="reName">
+                                    </div>
+                                    <div class="form-group">
+                                        <label id="alertMail" class="col-form-label">Email:</label>
+                                        <input type="text" placeholder="example@gmail.com" oninput="CheckRegister()"
+                                               class="form-control" value="" id="reMail">
+                                    </div>
+                                    <div class="form-group">
+                                        <label id="alertNamelogin" class="col-form-label">ID login:</label>
+                                        <input type="text" placeholder="Tên đăng nhập" oninput="CheckRegister()"
+                                               class="form-control" value="" id="reNamelogin">
+                                    </div>
+                                    <div class="form-group">
+                                        <label id="alertPassword" class="col-form-label">Password:</label>
+                                        <input type="password" placeholder="Mật khẩu" oninput="CheckRegister()"
+                                               class="form-control" value="" id="rePass">
+                                    </div>
+                                    <div class="form-group">
+                                        <label id="alertCfPass" class="col-form-label">Confirm password:</label>
+                                        <input type="password" placeholder="Xác nhận lại mật khẩu"
+                                               oninput="CheckRegister()" class="form-control" value="" id="reCfPass">
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button style="background-color: red;" type="button" class="btn btn-secondary"
+                                            data-dismiss="modal"   >Huỷ
+                                    </button>
+<!--                                    data-dismiss="modal" -->
+                                    <button type="button" onclick="registerNew()" class="btn btn-primary" >Đồng ý
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </ul>
             </div>
         </div>
     </div>
     <div class="content">
-        <div class="=content" >
+        <div class="=content">
             <div class="content1"><img src="img/content1.png" alt="anhnen">
             </div>
             <div class=" content3 "><img src="img/anh5.png" alt="anh5"></div>
@@ -49,18 +143,137 @@
         </div>
     </div>
 </div>
+<script>
+
+    //---modal---register------
+    $('#exampleModal3').on('show.bs.modal', function (event) {
+        var button = $(event.relatedTarget) // Button that triggered the modal
+        var recipient = button.data('whatever')
+        var modal = $(this)
+        modal.find('.modal-title').text('Register ')
+        modal.find('.modal-body input').val()
+    })
+    //------modal--------login-------
+    $('#exampleModal2').on('show.bs.modal', function (event) {
+        var button = $(event.relatedTarget) // Button that triggered the modal
+        var recipient = button.data('whatever')
+        var modal = $(this)
+        modal.find('.modal-title').text('Login ')
+        modal.find('.modal-body input').val()
+    })
+    let Adminn = new User(1, 'pham thanh', 'thanhpham@gmail.com', 'thanhpc', 'lieungo')
+    let reName;
+    let reEmail;
+    let idLogin;
+    let pass;
+    let cFpass;
+    let dataUser = [];
+    dataUser.push(Adminn)
+    window.localStorage.setItem('List_data', JSON.stringify(dataUser));
+    let checkRegister=0;
+    let getListdata;
+
+    function CheckRegister() {
+        getListdata = JSON.parse(window.localStorage.getItem('List_data'));
+        reName = document.getElementById('reName').value;
+        reEmail = document.getElementById('reMail').value;
+        idLogin = document.getElementById('reNamelogin').value;
+        pass = document.getElementById('rePass').value;
+        cFpass = document.getElementById('reCfPass').value;
+        for (let i = 0; i < getListdata.length; i++) {
+            if (reName == '') {
+                document.getElementById('alertName').innerHTML = `<lable style="color: red">*Không để trống*</lable>`
+            } else {
+                document.getElementById('alertName').innerHTML = `<lable style="color: #0033ff">Full name: </lable>`
+            }
+            if (reEmail == getListdata[i].email) {
+                document.getElementById('alertMail').innerHTML = `<lable style="color: red">*Email đã tồn tại*</lable>`
+            } else {
+                if (reEmail == '') {
+                    document.getElementById('alertMail').innerHTML = `<lable style="color: red">*Không để trống*</lable>`
+                } else {
+                    if (reEmail.search('@') != -1) {
+                        document.getElementById('alertMail').innerHTML = `<lable style="color: #0033ff">Email: </lable>`
+                    } else {
+                        document.getElementById('alertMail').innerHTML = `<lable style="color: red">*Sai định dạng*</lable>`
+                    }
+                }
+            }
+            if (idLogin==getListdata[i].username){
+                document.getElementById('alertNamelogin').innerHTML = `<lable style="color: red">*ID login đã tồn tại*</lable>`
+            }else{
+                if (idLogin == '') {
+                    document.getElementById('alertNamelogin').innerHTML = `<lable style="color: red">*Không để trống*</lable>`
+                } else {
+                    document.getElementById('alertNamelogin').innerHTML = `<lable style="color: #0033ff">ID Login: </lable>`
+                }
+            }
+            if (pass == '') {
+                document.getElementById('alertPassword').innerHTML = `<lable style="color: red">*Không để trống*</lable>`
+            } else {
+                if (idLogin == pass) {
+                    document.getElementById('alertPassword').innerHTML = `<lable style="color: red">*Không được trùng với ID login*</lable>`
+
+                } else {
+                    document.getElementById('alertPassword').innerHTML = `<lable style="color: #0033ff">Password: </lable>`
+                }
+            }
+            if (cFpass == '') {
+                document.getElementById('alertCfPass').innerHTML = `<lable style="color: red">*Không để trống*</lable>`
+            } else {
+                if (pass != cFpass) {
+                    document.getElementById('alertCfPass').innerHTML = `<lable style="color: red">*Không trùng khớp với Password *</lable>`
+
+                } else {
+                    document.getElementById('alertCfPass').innerHTML = `<lable style="color: #0033ff">Confirm password: </lable>`
+                }
+            }
+        }
+    }
+
+    function registerNew() {
+
+        let id;
+        if (dataUser == null) {
+            dataUser = []
+            id = 1;
+        } else {
+            dataUser = JSON.parse(window.localStorage.getItem('List_data'));
+            id = dataUser[dataUser.length - 1].iduser + 1
+        }
+        if (reName == '' && reEmail == '' && idLogin == '' && pass == '' && cFpass == '') {
+            document.getElementById('exampleModalLabel3').innerHTML = `<h5 style="color: red">Đăng kí không thành công nhân !</h5>`
+        } else {
+            if (reName == '' || reEmail == '' || idLogin == '' || pass == '' || cFpass == '' || pass != cFpass || reEmail.search('@') == -1) {
+                document.getElementById('exampleModalLabel3').innerHTML = `<h5 style="color: red">Đăng kí không thành công !</h5>`
+            } else {
+                document.getElementById('exampleModalLabel3').innerHTML = `<h5 style="color: red">Đăng kí thành công nhân !</h5>`
+                let newUser = new User(id, reName, reEmail, idLogin, pass)
+                dataUser.push(newUser)
+                window.localStorage.setItem('List_data', JSON.stringify(dataUser))
+            }
+        }
+    }
+    let namelogin;
+    let passlogin;
+    function loginHome() {
+         getListdata = JSON.parse(window.localStorage.getItem('List_data'));
+         namelogin=document.getElementById('nameLogin').value;
+         passlogin=document.getElementById('passLogin').value;
+         for ( let i=0;i<getListdata.length;i++){
+             if (namelogin!=getListdata[i].username|| passlogin!=getListdata[i].password||namelogin==''||passlogin==''){
+                 document.getElementById('alertLogin').innerHTML=`<label style="color: #fa0000" >*ID login hoặc password không tồn tại*</label>`
+             }else {
+                 document.getElementById('alertLogin').innerHTML=`<label style="color: #fa0000" >*ok*</label>`
+                 window.location.href='/'
+             }
+         }
+    }
 
 
 
 
-<script >
-    let a = document.getElementById("back-gr");
-    let hv = a.getContext("2d");
-    let grd = hv.createLinearGradient(200, 300, 0, 0);
-    grd.addColorStop(0, "red");
-    grd.addColorStop(1, "white");
-    hv.fillStyle = grd;
-    hv.fillRect(0, 0, 1400, 300);
+
 </script>
 </body>
 </html>
