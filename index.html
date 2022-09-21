@@ -18,6 +18,7 @@
     <meta charset="UTF-8">
     <title>Trang chủ rikkei</title>
     <script src="trangchu/User.js"></script>
+    <script src="Dataonline.js"></script>
 
 </head>
 <body>
@@ -256,7 +257,8 @@
     }
     let namelogin;
     let passlogin;
-    function loginHome() {
+    let usderOnline;
+    function loginHome(){
          getListdata = JSON.parse(window.localStorage.getItem('List_data'));
          namelogin=document.getElementById('nameLogin').value;
          passlogin=document.getElementById('passLogin').value;
@@ -264,13 +266,14 @@
              if (namelogin!=getListdata[i].username|| passlogin!=getListdata[i].password||namelogin==''||passlogin==''){
                  document.getElementById('alertLogin').innerHTML=`<label style="color: #fa0000" >*ID login hoặc password không tồn tại*</label>`
              }else {
-                 document.getElementById('alertLogin').innerHTML=`<label style="color: #fa0000" >*ok*</label>`
+                 document.getElementById('alertLogin').innerHTML=`<label style="color: #fa0000" >*Đăng nhập thành công*</label>`
                  window.location.href='/'
+                 window.localStorage.setItem('Check_user',namelogin)
              }
          }
     }
 
-let
+
 
 
 
