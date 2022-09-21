@@ -264,11 +264,13 @@
          for ( let i=0;i<getListdata.length;i++){
              if (namelogin!=getListdata[i].username|| passlogin!=getListdata[i].password||namelogin==''||passlogin==''){
                  document.getElementById('alertLogin').innerHTML=`<label style="color: #fa0000" >*ID login hoặc password không tồn tại*</label>`
+
              }else {
                  document.getElementById('alertLogin').innerHTML=`<label style="color: #fa0000" >*Đăng nhập thành công*</label>`
-                 window.location.href='/'
+                 window.location.href='homelogin.html'
                  window.localStorage.setItem('Check_user',JSON.stringify(namelogin))
-                 console.log('---------name----------ssdsd',window.localStorage.setItem('Check_user',JSON.stringify(namelogin)) )
+
+                 // console.log('---------name----------ssdsd',window.localStorage.setItem('Check_user',JSON.stringify(namelogin)) )
              }
          }
     }
