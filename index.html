@@ -73,7 +73,8 @@
                                     <button style="background-color: red;" type="button" class="btn btn-secondary"
                                             data-dismiss="modal">Huỷ
                                     </button>
-                                    <button type="button" onclick="loginHome()" class="btn btn-primary"><a href="homelogin.html">Đồng ý</a></button>
+                                    <button type="button" onclick="loginHome()" class="btn btn-primary"><a>Đồng ý</a>
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -117,10 +118,10 @@
                                 </div>
                                 <div class="modal-footer">
                                     <button style="background-color: red;" type="button" class="btn btn-secondary"
-                                            data-dismiss="modal"   >Huỷ
+                                            data-dismiss="modal">Đóng
                                     </button>
-<!--                                    data-dismiss="modal" -->
-                                    <button type="button" onclick="registerNew()" class="btn btn-primary" >Đồng ý
+                                    <!--                                    data-dismiss="modal" -->
+                                    <button type="button" onclick="registerNew()" class="btn btn-primary">Đồng ý
                                     </button>
                                 </div>
                             </div>
@@ -171,7 +172,7 @@
     let dataUser = [];
     dataUser.push(Adminn)
     window.localStorage.setItem('List_data', JSON.stringify(dataUser));
-    let checkRegister=0;
+    let checkRegister = 0;
     let getListdata;
 
     function CheckRegister() {
@@ -200,9 +201,9 @@
                     }
                 }
             }
-            if (idLogin==getListdata[i].username){
+            if (idLogin == getListdata[i].username) {
                 document.getElementById('alertNamelogin').innerHTML = `<lable style="color: red">*ID login đã tồn tại*</lable>`
-            }else{
+            } else {
                 if (idLogin == '') {
                     document.getElementById('alertNamelogin').innerHTML = `<lable style="color: red">*Không để trống*</lable>`
                 } else {
@@ -255,28 +256,25 @@
             }
         }
     }
+
     let namelogin;
     let passlogin;
-    function loginHome(){
-         getListdata = JSON.parse(window.localStorage.getItem('List_data'));
-         namelogin=document.getElementById('nameLogin').value;
-         passlogin=document.getElementById('passLogin').value;
-         for ( let i=0;i<getListdata.length;i++){
-             if (namelogin!=getListdata[i].username|| passlogin!=getListdata[i].password||namelogin==''||passlogin==''){
-                 document.getElementById('alertLogin').innerHTML=`<label style="color: #fa0000" >*ID login hoặc password không tồn tại*</label>`
 
-             }else {
-                 document.getElementById('alertLogin').innerHTML=`<label style="color: #fa0000" >*Đăng nhập thành công*</label>`
-                 window.location.href='homelogin.html'
-                 window.localStorage.setItem('Check_user',JSON.stringify(namelogin))
+    function loginHome() {
+        getListdata = JSON.parse(window.localStorage.getItem('List_data'));
+        namelogin = document.getElementById('nameLogin').value;
+        passlogin = document.getElementById('passLogin').value;
+        for (let i = 0; i < getListdata.length; i++) {
+            if (namelogin == getListdata[i].username && passlogin == getListdata[i].password) {
+                document.getElementById('alertLogin').innerHTML = `<label style="color: #fa0000" >*Đăng nhập thành công*</label>`
+                window.location.href = 'homelogin.html'
+                window.localStorage.setItem('Check_user', JSON.stringify(namelogin))
+            } else {
+                document.getElementById('alertLogin').innerHTML = `<label style="color: #fa0000" >*ID login hoặc password không tồn tại*</label>`
+            }
 
-                 // console.log('---------name----------ssdsd',window.localStorage.setItem('Check_user',JSON.stringify(namelogin)) )
-             }
-         }
+        }
     }
-
-
-
 
 
 </script>
