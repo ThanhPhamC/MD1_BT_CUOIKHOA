@@ -101,8 +101,8 @@
                             <th>Số điện thoại</th>
                             <th>Facabook</th>
                             <th>GitHub</th>
-                            <th>Sửa</th>
-                            <th>Xoá</th>
+                            <th class="nonebutton" >Sửa</th>
+                            <th class="nonebutton" >Xoá</th>
                         </tr>
                         <tbody id="vebody">
                         </tbody>
@@ -131,7 +131,7 @@
                 <td>${danhsachBanbe[i].sdt}</td>
                 <td>${danhsachBanbe[i].fb}</td>
                 <td>${danhsachBanbe[i].github}</td>
-                <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal2" data-whatever="${danhsachBanbe[i].id}"><i class="bi bi-pencil-square"></i></button>
+                <td class="nonebutton" ><button type="button" class="btn noneshow btn-primary" data-toggle="modal" data-target="#exampleModal2" data-whatever="${danhsachBanbe[i].id}"><i class="bi bi-pencil-square"></i></button>
                     <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog"
                          aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog" role="document">
@@ -169,7 +169,7 @@
                         </div>
                     </div>
                 </td>
-                <td><button style="background-color: red; color: cornsilk" type="button" class="btn " data-toggle="modal" data-target="#exampleModal3" data-whatever="${danhsachBanbe[i].id}"><i class="bi bi-pencil-square"></i></button>
+                <td class="nonebutton" ><button style="background-color: red; color: cornsilk" type="button" class="btn noneshow " data-toggle="modal" data-target="#exampleModal3" data-whatever="${danhsachBanbe[i].id}"><i class="bi bi-pencil-square"></i></button>
                     <div class="modal fade" id="exampleModal3" tabindex="-1" role="dialog"
                          aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog" role="document">
@@ -195,6 +195,8 @@
                 </td>
              </tr>`
         }
+
+
         document.getElementById('vebody').innerHTML = veBang;
         $('#exampleModal2').on('show.bs.modal', function (event) {
             var button = $(event.relatedTarget) // Button that triggered the modal
@@ -220,6 +222,21 @@
         var modal = $(this)
         modal.find('.modal-title').text('Thêm bạn bè ' + recipient)
         modal.find('.modal-body input').val(recipient)
+        // if (nameKey=== null){
+            // document.getElementById('edit_id').style.display='none'
+            // document.getElementById('delete_id').style.display='none'
+        //     let td_button = document.getElementsByClassName('td_button');
+        //     for (let i = 0; i < td_button.length; i++) {
+        //         td_button[i].style.display = 'none'
+        //     }
+        // }
+        checkUsderonline=window.localStorage.getItem('Check_user');
+        let noneButton= document.getElementsByClassName('')
+        if (checkUsderonline===null){
+            for (let  i = 0; i < noneButton.length ; i++) {
+                noneButton[i].style.display='none'
+            }
+        }
     })
     showDanhsach()
     function addFriend() {
@@ -327,9 +344,7 @@
         }
         showDanhsach()
     }
-
     let listSearch = [];
-
     function searchFriend() {
         listSearch = [];
         let searchInput = document.getElementById('searchFriend').value;
@@ -339,7 +354,6 @@
         } else {
             for (let i = 0; i < danhsachBanbe.length; i++) {
                 if (
-                    // danhsachBanbe[i].ten.search(searchInput) != -1
                     danhsachBanbe[i].ten.toLowerCase().search(searchInput.toLowerCase()) != -1
                     || danhsachBanbe[i].fb.toLowerCase().search(searchInput.toLowerCase()) != -1
                     || danhsachBanbe[i].github.toLowerCase().search(searchInput.toLowerCase()) != -1
@@ -350,8 +364,9 @@
             }
         }
     }
-
+let checkUsderonline;
     function showListsearch() {
+
         let veBang = '';
         for (let i = 0; i < listSearch.length; i++) {
             veBang +=
@@ -422,8 +437,9 @@
                 </td>
              </tr>`
         }
+
         document.getElementById('vebody').innerHTML = veBang;
-        document.getElementById('vebody').innerHTML = veBang;
+
         $('#exampleModal2').on('show.bs.modal', function (event) {
             var button = $(event.relatedTarget) // Button that triggered the modal
             var recipient = button.data('whatever')
@@ -442,13 +458,11 @@
             modal.find('.modal-body input').val('Xác nhận xoá "' + danhsachBanbe[idDelete - 1].getTen() + '" khỏi danh sách !')
         })
     }
-    let getcheckUsderonline;
-function checkKey() {
-    getcheckUsderonline =window.localStorage.getItem('Check_user')
-    console.log('-----name-----',getcheckUsderonline)
-}
 
-checkKey()
+
+
+
+
 </script>
 </body>
 </html>
