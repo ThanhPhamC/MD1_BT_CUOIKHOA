@@ -112,6 +112,20 @@
     position: absolute;
     top: 645px;
 }
+.bg-red{
+    width: 78%;
+    margin-left: 11%;
+}
 
+.itemmm{
+align-items: center;
+    background-color: #fcfcfc;
+    font-size: 30px;
+  display: flex;
 
-
+}.itemmm a{
+    padding-left: 100px;
+ }
+.row {
+    background-color: #fdfafa;
+}
