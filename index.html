@@ -257,7 +257,6 @@
     }
     let namelogin;
     let passlogin;
-    let usderOnline;
     function loginHome(){
          getListdata = JSON.parse(window.localStorage.getItem('List_data'));
          namelogin=document.getElementById('nameLogin').value;
@@ -268,7 +267,8 @@
              }else {
                  document.getElementById('alertLogin').innerHTML=`<label style="color: #fa0000" >*Đăng nhập thành công*</label>`
                  window.location.href='/'
-                 window.localStorage.setItem('Check_user',namelogin)
+                 window.localStorage.setItem('Check_user',JSON.stringify(namelogin))
+                 console.log('---------name----------ssdsd',window.localStorage.setItem('Check_user',JSON.stringify(namelogin)) )
              }
          }
     }
