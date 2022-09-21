@@ -219,16 +219,10 @@
         var modal = $(this)
         modal.find('.modal-title').text('Thêm bạn bè ' + recipient)
         modal.find('.modal-body input').val(recipient)
-        // if (nameKey=== null){
-            // document.getElementById('edit_id').style.display='none'
-            // document.getElementById('delete_id').style.display='none'
-        //     let td_button = document.getElementsByClassName('td_button');
-        //     for (let i = 0; i < td_button.length; i++) {
-        //         td_button[i].style.display = 'none'
-        //     }
-        // }
-        let checkUsderonline;
-        checkUsderonline=window.localStorage.getItem('Check_user');
+
+
+
+        let checkUsderonline=JSON.parse(window.localStorage.getItem('Check_user')) ;
         console.log('-----checkusonline----',checkUsderonline)
         let noneButton= document.getElementsByClassName('nonebutton')
         if (checkUsderonline===null){
