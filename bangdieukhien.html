@@ -244,7 +244,7 @@
                 document.getElementById('thongBao').innerHTML = ` <lable style="color: crimson">Dữ liệu đã tồn tại !</lable>`;
                 break;
             } else {
-                if (newTen.trim() == "" || newSdt.trim() == "" || newFb.trim() == '' || newGithub.trim() == "") {
+                if (newTen.trim() == "" || newSdt.trim() == "" || newFb.trim() == '' || newGithub.trim() == "" ||newSdt<8||newSdt>11) {
                     document.getElementById('thongBao').innerHTML = ` <lable style="color: crimson">Dữ liệu chưa chính xác !</lable>`;
                 } else {
                     let newFriend = new Friend(newId, newTen, newSdt, newFb, newGithub);
