@@ -118,10 +118,8 @@ function loginHome() {
     for (let i = 0; i < getListdata.length; i++) {
         if (namelogin == getListdata[i].username && passlogin == getListdata[i].password) {
             document.getElementById('alertLogin').innerHTML = `<label style="color: #fa0000" >*Đăng nhập thành công*</label>`
-            window.location.href = '/'
+            window.location.href = 'homelogin.html'
             window.localStorage.setItem('Check_user', JSON.stringify(namelogin))
-            document.getElementById('newtext').innerHTML=`<p>ao ma the</p>`
-
         } else {
             document.getElementById('alertLogin').innerHTML = `<label style="color: #fa0000" >*ID login hoặc password không tồn tại*</label>`
         }
