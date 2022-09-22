@@ -119,8 +119,9 @@ function loginHome() {
         if (namelogin == getListdata[i].username && passlogin == getListdata[i].password) {
             document.getElementById('alertLogin').innerHTML = `<label style="color: #fa0000" >*Đăng nhập thành công*</label>`
             // window.location.href = 'homelogin.html'
-            document.getElementById('showbdk').innerHTML=`<a href="bangdieukhien.html"><i class="bi bi-ui-checks"></i> Bảng điều khiển</a>`
-document.getElementById('logout').innerHTML=`<a onclick="logOut()" href="index.html"><i class="bi bi-box-arrow-right"></i> Đăng xuất</a>`
+            document.getElementById('showbdk').innerHTML = `<a href="bangdieukhien.html"><i class="bi bi-ui-checks"></i> Bảng điều khiển</a>`
+            document.getElementById('logout').innerHTML = `<a onclick="logOut()" href="index.html"><i class="bi bi-box-arrow-right"></i> Đăng xuất</a>`
+
             window.localStorage.setItem('Check_user', JSON.stringify(namelogin))
         } else {
             document.getElementById('alertLogin').innerHTML = `<label style="color: #fa0000" >*ID login hoặc password không tồn tại*</label>`
@@ -128,6 +129,7 @@ document.getElementById('logout').innerHTML=`<a onclick="logOut()" href="index.h
 
     }
 }
+
 function logOut() {
     window.localStorage.removeItem('Check_user');
     window.location.reload();

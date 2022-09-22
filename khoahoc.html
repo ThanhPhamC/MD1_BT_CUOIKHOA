@@ -57,7 +57,10 @@
             window.location.href = 'index.html'
         }else {
             console.log('=======khong=========')
-            window.location.href = 'homelogin.html'
+            window.location.href = 'index.html'
+            document.getElementById('showbdk').innerHTML = `<a href="bangdieukhien.html"><i class="bi bi-ui-checks"></i> Bảng điều khiển</a>`
+            document.getElementById('logout').innerHTML = `<a onclick="logOut()" href="index.html"><i class="bi bi-box-arrow-right"></i> Đăng xuất</a>`
+
         }
 
     }
